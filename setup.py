@@ -11,7 +11,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Pixelsuft/small_win_tools/",
-    packages=sfind_packages(),
+    packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -19,7 +19,6 @@ setup(
     ],
     python_requires='>=3.5',
     license='MIT', 
-    classifiers=classifiers,
     keywords='small_win_tools',
     install_requires=[''] 
 )
