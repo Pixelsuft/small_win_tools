@@ -1,6 +1,6 @@
 # Small Windows Tools
 Python package for Windows<br />
-[GitHub](https://github.com/Pixelsuft/small_win_tools)
+[PyPi](https://pypi.org/project/small-win-tools/)
 # Functions
 1) Get screen width and height<br />
 2) Check file exists<br />
@@ -29,3 +29,5 @@ Message Box:<br />
 ```BUTTONS``` - buttons (ok, okcancel, retrycancel, abortretrycancel, yesno, yesnocancel)<br />
 ```DEFAULT_BUTTON``` - default button (1, 2, 3, 4)<br />
 ```MODAL``` - modal (appl, system)
+# Bugs
+Last symbol in message box doesn't displaying.
