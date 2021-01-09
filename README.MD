@@ -20,6 +20,12 @@ And gets result using return code
 ```tools.file_exists('document.txt')``` - Returns true if file exists<br />
 ```tools.play_sound('FileName.wav',snd_async=False, snd_loop=False)``` - Plays (only WAV!) sound<br />
 ```tools.system('color 0a')``` - Run command ```color 0a```<br />
-```tools.get_screen_size()``` - Returns screen size (```tools.get_width```,```tools.get_height```)<br />
+```tools.get_screen_size()``` - Returns screen size (```tools.get_width()```,```tools.get_height()```)<br />
 ```tools.set_title('new title')``` -  Set console title<br />
-```tools.show_message('text')``` - Show simple message (without \n, title, custom buttons and icons)
+```tools.show_message('text')``` - Show simple message (without \n, title, custom buttons and icons)<br />
+Message Box:<br />
+```tools.message_box('Title','Text', mb_icon=ICON, mb_buttons=BUTTONS, mb_defbutton=DEFAULT_BUTTON, mb_modal=MODAL)``` - Returns pressed button<br />
+```ICON``` - icon (information, warning, error, question)<br />
+```BUTTONS``` - buttons (ok, okcancel, retrycancel, abortretrycancel, yesno, yesnocancel)<br />
+```DEFAULT_BUTTON``` - default button (1, 2, 3, 4)<br />
+```MODAL``` - modal (appl, system)
