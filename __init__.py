@@ -2,10 +2,24 @@
 # By Pixelsuft
 from os import system as cmd_run
 from os import name as system_type
-
+from os import access as file_access_py
+from os import F_OK as file_access_py_param
 
 if not __name__=='__main__':
     if system_type=='nt':
+        if not file_access_py('play_sound.exe',file_access_py_param):
+            from urllib.request import urlretrieve as download
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/file_exists.exe','file_exists.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_cursor.exe','get_cursor.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_height.exe','get_height.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_width.exe','get_width.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/message_box.exe','message_box.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/play_sound.exe','play_sound.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/set_size.exe','set_size.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/set_title.exe','set_title.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/show_message.exe','show_message.exe')
+            download('https://github.com/Pixelsuft/small_win_tools/raw/main/system.exe','system.exe')
+        from urllib.request import urlretrieve as download
         def file_exists(file_name):
             file_name_str=str(file_name).replace('"','').replace("'","")
             result=int(cmd_run('file_exists.exe "'+file_name_str+'"'))
