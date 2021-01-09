@@ -15,3 +15,6 @@ Python package for Windows<br />
 I compiled programs written on C++<br />
 Python contact with C++ using command line arguments<br />
 And gets result using return code
+# Small Documentation
+```import small_win_tools as tools``` - import<br />
+```tools.file_exists('document.txt')``` - check file exists<br />
