@@ -7,8 +7,8 @@ from os import F_OK as file_access_py_param
 
 if not __name__=='__main__':
     if system_type=='nt':
-        if not file_access_py('play_sound.exe',file_access_py_param):
-            from urllib.request import urlretrieve as download
+        from urllib.request import urlretrieve as download
+        def download_all():
             download('https://github.com/Pixelsuft/small_win_tools/raw/main/file_exists.exe','file_exists.exe')
             download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_cursor.exe','get_cursor.exe')
             download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_height.exe','get_height.exe')
@@ -19,8 +19,11 @@ if not __name__=='__main__':
             download('https://github.com/Pixelsuft/small_win_tools/raw/main/set_title.exe','set_title.exe')
             download('https://github.com/Pixelsuft/small_win_tools/raw/main/show_message.exe','show_message.exe')
             download('https://github.com/Pixelsuft/small_win_tools/raw/main/system.exe','system.exe')
-        from urllib.request import urlretrieve as download
+        
+        
         def file_exists(file_name):
+            if not file_access_py('file_exists.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/file_exists.exe','file_exists.exe')
             file_name_str=str(file_name).replace('"','').replace("'","")
             result=int(cmd_run('file_exists.exe "'+file_name_str+'"'))
             if result==0:
@@ -30,12 +33,16 @@ if not __name__=='__main__':
         
         
         def system(command):
+            if not file_access_py('system.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/system.exe','system.exe')
             command_str=str(command).replace('"','').replace("'","")
             result=int(cmd_run('system.exe "'+command_str+'"'))
             return result
         
         
         def play_sound(file_name, snd_async=False, snd_loop=False):
+            if not file_access_py('play_sound.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/play_sound.exe','play_sound.exe')
             file_name_str=str(file_name).replace('"','').replace("'","")
             for_run=0
             if snd_async==True:
@@ -52,12 +59,16 @@ if not __name__=='__main__':
         
         
         def show_message(msg):
+            if not file_access_py('show_message.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/show_message.exe','show_message.exe')
             msg_str=str(msg).replace('"','').replace("'","")
             result=int(cmd_run('show_message.exe "'+msg_str+'"'))
             return result
         
         
         def set_title(new_title):
+            if not file_access_py('set_title.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/set_title.exe','set_title.exe')
             new_title_str=str(new_title).replace('"','').replace("'","")
             result=int(cmd_run('set_title.exe "'+new_title_str+'"'))
             if result==0:
@@ -67,16 +78,22 @@ if not __name__=='__main__':
         
         
         def get_cursor():
+            if not file_access_py('get_cursor.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_cursor.exe','get_cursor.exe')
             result=int(cmd_run('get_cursor.exe'))
             return result
         
         
         def get_width():
+            if not file_access_py('get_width.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_width.exe','get_width.exe')
             result=int(cmd_run('get_width.exe'))
             return result
         
         
         def get_height():
+            if not file_access_py('get_height.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/get_height.exe','get_height.exe')
             result=int(cmd_run('get_height.exe'))
             return result
         
@@ -86,6 +103,8 @@ if not __name__=='__main__':
         
         
         def set_screen_size(new_width, new_height):
+            if not file_access_py('set_size.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/set_size.exe','set_size.exe')
             new_width_int=0
             new_height_int=0
             try:
@@ -101,6 +120,8 @@ if not __name__=='__main__':
         
         
         def message_box(title,msg,mb_icon='information',mb_buttons='ok',mb_defbutton=1,mb_modal='appl'):
+            if not file_access_py('set_size.exe',file_access_py_param):
+                download('https://github.com/Pixelsuft/small_win_tools/raw/main/message_box.exe','message_box.exe')
             result=0
             title_str=str(title).replace('"','').replace("'","")
             msg_str=str(msg).replace('"','').replace("'","").replace('\n','\\n')
